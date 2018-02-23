@@ -107,7 +107,7 @@ body {
   -webkit-transition: background .125s ease;
   transition: background .125s ease;
 }
-.App .Artwork .controls-wrapper span:hover{
+.App .Artwork .controls-wrapper i:hover{
 	cursor:pointer;
 }
 .App .Artwork .controls-wrapper .fa-play,

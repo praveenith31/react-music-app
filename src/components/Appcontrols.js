@@ -14,16 +14,16 @@ class Appcontrols extends React.Component {
 	showPausePlay() {
 		return (
 			this.props.isPlaying 
-			? <span 
+			? <i 
 					id ='pause'
 					className = 'fa fa-fw fa-pause'
 					onClick = {this.props.handleClickControls}>
-				</span>
-			: <span 
+				</i>
+			: <i 
 					id ='play'
 					className = 'fa fa-fw fa-play'
 					onClick = {this.props.handleClickControls}>
-				</span>
+				</i>
 			);
 	}
 
@@ -31,19 +31,20 @@ class Appcontrols extends React.Component {
 		return (
 			<div className="Artwork">
 				<div className="controls-wrapper">
-					<span 
+					<i 
 						id ='prev'
 						ref = 'prev'
 						className = 'fa fa-fw fa-fast-backward'
 						onClick = {this.props.handleClickControls}>
-					</span>
+					</i>
 					{this.showPausePlay()}
-					<span 
+					<i 
 						id ='next'
 						ref = 'next'
 						className = 'fa fa-fw fa-fast-forward'
 						onClick = {this.props.handleClickControls}>
-					</span>
+					</i>
+					<i className="fa fa-random"></i>
 				</div>
 			</div>
 			);
