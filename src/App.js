@@ -16,6 +16,7 @@ class App extends React.Component {
 			isShuffle: false,
 		};
 		this.handleClickControls = this.handleClickControls.bind(this);
+		this.songClicked = this.songClicked.bind(this);
 	}
 
 	playAudio() {
@@ -25,6 +26,14 @@ class App extends React.Component {
 
 	pauseAudio() {
 		this.audio.pause();
+	}
+
+	songClicked(e) {
+		let target = e.target;
+		this.setState({
+			isPlaying: true,
+			currentIndex: e.target.getAttribute('data-track-id')
+		}, this.playAudio);
 	}
 
 	handleClickControls(e) {
@@ -51,6 +60,7 @@ class App extends React.Component {
 					currentIndex: prevState.currentIndex !== 1 ? (prevState.currentIndex - 1) : 1,
 					isPlaying: true
 				}), this.playAudio);
+				break;
 			case 'random':
 				while(nextRandomTrack === this.state.currentIndex) {
 					nextRandomTrack = Math.floor(Math.random() * data.tracks.length + 1)
@@ -80,7 +90,7 @@ class App extends React.Component {
 				<div className='songName'><h1>{this.getSongInfo()}</h1></div>
 				<Appcontrols songsList={data} isPlaying={this.state.isPlaying} currentIndexPlaying={this.state.currentIndex} handleClickControls={this.handleClickControls}/>
 				<audio ref={(audio) => this.audio = audio} src={`/songs/${this.state.currentIndex}.mp3`} />
-				<Songslist songsList={data} currentIndexPlaying={this.state.currentIndex} handleClickControls={this.handleClickControls}/>
+				<Songslist songsList={data.tracks} currentIndexPlaying={this.state.currentIndex} songClicked={this.songClicked}/>
 			</div>
 			);
 	}
