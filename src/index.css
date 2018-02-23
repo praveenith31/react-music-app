@@ -51,7 +51,7 @@ table {
 }
 
 body {
-  background: #291720;
+  background: dimgray;
   color: #F0EDEE;
   font-family: 'Lato';
 }
@@ -77,6 +77,7 @@ body {
   overflow: hidden;
   width: 280px;
   height: 430px;
+  background: rgba(41, 23, 32, 0.8);
 }
 .App .Artwork {
   width: 280px;

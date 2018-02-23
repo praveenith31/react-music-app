@@ -24,12 +24,15 @@ class App extends React.Component {
 		this.audio.play();
 	}
 
+	resumeAudio() {
+		this.audio.play();
+	}
+
 	pauseAudio() {
 		this.audio.pause();
 	}
 
 	songClicked(e) {
-		let target = e.target;
 		this.setState({
 			isPlaying: true,
 			currentIndex: e.target.getAttribute('data-track-id')
@@ -42,7 +45,7 @@ class App extends React.Component {
 			case 'play':
 				this.setState({
 					isPlaying: true	
-				}, this.playAudio);
+				}, this.resumeAudio);
 				break;
 			case 'pause':
 				this.setState({
