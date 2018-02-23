@@ -12,6 +12,7 @@ class Appcontrols extends React.Component {
 	}
 
 	showPausePlay() {
+		console.log('::::', this.props);
 		return (
 			this.props.isPlaying 
 			? <i 
@@ -44,7 +45,12 @@ class Appcontrols extends React.Component {
 						className = 'fa fa-fw fa-fast-forward'
 						onClick = {this.props.handleClickControls}>
 					</i>
-					<i className="fa fa-random"></i>
+					<i 
+						id = "random"
+						className="fa fa-random"
+						ref = 'random'
+						onClick = {this.props.handleClickControls}>
+					</i>
 				</div>
 			</div>
 			);
