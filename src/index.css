@@ -51,7 +51,7 @@ table {
 }
 
 body {
-  background: #291720;
+  background: dimgray;
   color: #F0EDEE;
   font-family: 'Lato';
 }
@@ -77,6 +77,7 @@ body {
   overflow: hidden;
   width: 280px;
   height: 430px;
+  background: rgba(41, 23, 32, 0.8);
 }
 .App .Artwork {
   width: 280px;
@@ -86,6 +87,11 @@ body {
 }
 .App .Artwork:hover .controls-wrapper {
   background: rgba(41, 23, 32, 0.8);
+
+}
+
+.App .songName {
+  padding: 10px 0;
 }
 .App .Artwork .controls-wrapper {
   position: absolute;
@@ -106,6 +112,8 @@ body {
           align-items: center;
   -webkit-transition: background .125s ease;
   transition: background .125s ease;
+  background: url('images/cover.jpg');
+  background-size: cover;
 }
 .App .Artwork .controls-wrapper i:hover{
 	cursor:pointer;
